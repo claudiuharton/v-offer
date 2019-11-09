@@ -76,6 +76,9 @@
         <div class="q-pa-md">
           <q-btn label="Submit" type="submit" color="primary" />
         </div>
+        <!-- <div class="q-pa-md"> -->
+        <q-btn label="Submit" type="submit" color="primary" />
+        <!-- </div> -->
       </q-form>
     </q-page>
   </center>
