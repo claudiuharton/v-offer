@@ -2,11 +2,10 @@
   <q-page class="flex flex-center column">
     <div class="q-pa-md">
       <q-table
-        title="My Events"
+        title=" My Events "
         :data="data"
         :columns="columns"
         row-key="name"
-        selection="multiple"
         :selected.sync="selected"
         :filter="filter"
         grid
