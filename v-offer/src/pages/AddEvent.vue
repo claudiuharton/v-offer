@@ -59,7 +59,7 @@
           </div>
           <div style="max-width: 300px">
             <p></p>Description of event:
-            <q-input v-model="description" filled type="textarea" />
+            <q-input v-model="decription" filled type="textarea" />
           </div>
         </div>
         <div class="q-pa-md">

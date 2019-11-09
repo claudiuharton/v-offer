@@ -10,7 +10,8 @@ const routes = [
         path: "/events_attended",
         component: () => import("pages/Events_attended.vue")
       },
-      { path: "/addevent", component: () => import("pages/AddEvent.vue") }
+      { path: "/addevent", component: () => import("pages/AddEvent.vue") },
+      { path: "/admin", component: () => import("pages/Admin.vue") }
     ]
   },
   {
