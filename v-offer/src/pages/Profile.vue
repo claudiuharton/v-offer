@@ -1,7 +1,7 @@
 <template>
   <center>
     <q-page padding>
-      <q-form @submit="onSubmit" class="q-gutter-md">
+      <q-form class="q-gutter-md">
         <div class="q-pa-md flex flex-center column">
           <h3>Edit user profile</h3>
           <div class="flex">
@@ -97,14 +97,7 @@ export default {
       startDate: "2019/11/09",
       endDate: "2019/11/09",
       multiple: null,
-      options: [
-        "Cooking",
-        "Public speaking",
-        "Web coding",
-        "Teaching",
-        "Swimming",
-        "Driving"
-      ],
+      options: ["Generosity", "Kindness", "Wilingness"],
       user: {
         name: "John Smith",
         email: "email@example.com",

@@ -21,7 +21,7 @@
 
         <div>
           <q-btn label="Submit" type="submit" @click="login" color="primary" />
-          <!-- <q-btn label="Register" color="primary" @click="register" flat class="q-ml-sm" /> -->
+          <q-btn label="Register" color="primary" to="/register" flat class="q-ml-sm" />
         </div>
       </q-form>
     </div>

@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="q-pa-md">
-            <q-btn label="Submit" type="submit" v-on:click="onSubmit" color="primary" />
+            <q-btn label="Submit" type="submit" color="primary" />
           </div>
         </q-form>
       </center>

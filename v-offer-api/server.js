@@ -4,9 +4,9 @@ const router = require("./routes");
 const session = require("client-sessions");
 const PORT = require("./config").runtime.port;
 const sessionKey = require("./secrets").sessionKey;
-
+const cors = require("cors");
 const app = express();
-
+app.use(cors());
 app.use(
   session({
     cookieName: "session",

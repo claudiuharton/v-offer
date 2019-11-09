@@ -71,7 +71,7 @@
 
 <script>
 export default {
-  beforeMount() {
+  beforeCreate() {
     const loggedIn = this.$cookies.get("loggedIn");
     console.log(loggedIn);
     if (!loggedIn) {

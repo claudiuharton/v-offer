@@ -71,7 +71,14 @@ const controller = {
       } else {
         req.session.id = u.id;
         req.session.token = u.token;
-        res.status(200).send({ message: "Successful login" });
+        res.status(200).send({
+          id: u.id,
+          email: u.email,
+          phone: u.phone,
+          firstName: u.firstName,
+          lastName: u.lastName,
+          isAdmin: u.isAdmin
+        });
       }
     }
   },
