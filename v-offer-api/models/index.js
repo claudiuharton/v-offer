@@ -1,8 +1,24 @@
-const db = require('../config').db;
+const db = require("../config").db;
 
-const User = db.import('./user');
+const User = db.import("./user");
+const Event = db.import("./event");
 
-module.exports ={
-    User,
-    connection:db
+const EventUser = db.import("./eventUser");
+
+Event.belongsTo(User, {
+  onDelete: "Cascade"
+});
+
+EventUser.belongsTo(User, {
+  onDelete: "Cascade"
+});
+EventUser.belongsTo(Event, {
+  onDelete: "Cascade"
+});
+
+module.exports = {
+  User,
+  Event,
+  EventUser,
+  connection: db
 };

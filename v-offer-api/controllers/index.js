@@ -1,9 +1,11 @@
-const users = require('./users')
-const other = require('./other')
+const auth = require("./auth");
+const other = require("./other");
+const events = require("./events");
 
 const controllers = {
-    users,
-    other
-}
+  auth,
+  other,
+  events
+};
 
-module.exports = controllers
+module.exports = controllers;

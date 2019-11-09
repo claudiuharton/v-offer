@@ -1,9 +1,12 @@
-const config = require('../configuration');
+const config = require("../configuration");
 
-const port = (process.env.NODE_ENV === 'production') ? config.production.port : config.development.port
+const port =
+  process.env.NODE_ENV === "production"
+    ? config.production.port
+    : config.development.port;
 
 const runtime = {
-    port
-}
+  port
+};
 
-module.exports = runtime
+module.exports = runtime;

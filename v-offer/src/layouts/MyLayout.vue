@@ -11,99 +11,53 @@
           aria-label="Menu"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title>Quasar App</q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-2"
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-2">
       <q-list>
         <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
+        <q-item clickable tag="a" to="/">
           <q-item-section avatar>
-            <q-icon name="school" />
+            <q-icon name="home" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
+            <q-item-label>Main Page</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item
-          clickable
-          tag="a"
-          target="_blank"
-          href="https://github.quasar.dev"
-        >
+        <q-item clickable tag="a" to="/Profile">
           <q-item-section avatar>
-            <q-icon name="code" />
+            <q-icon name="account_circle" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
+            <q-item-label>Profile</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item
-          clickable
-          tag="a"
-          target="_blank"
-          href="https://chat.quasar.dev"
-        >
+        <q-item clickable tag="a" to="/Events_attended">
           <q-item-section avatar>
-            <q-icon name="chat" />
+            <q-icon name="view_list" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
+            <q-item-label>Events Attended</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item
-          clickable
-          tag="a"
-          target="_blank"
-          href="https://forum.quasar.dev"
-        >
+        <q-item clickable tag="a" to="/MyEvents">
           <q-item-section avatar>
-            <q-icon name="record_voice_over" />
+            <q-icon name="pan_tool" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
+            <q-item-label>My Events</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item
-          clickable
-          tag="a"
-          target="_blank"
-          href="https://twitter.quasar.dev"
-        >
+        <q-item clickable tag="a" to="/Login">
           <q-item-section avatar>
-            <q-icon name="rss_feed" />
+            <q-icon name="highlight_off" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item
-          clickable
-          tag="a"
-          target="_blank"
-          href="https://facebook.quasar.dev"
-        >
-          <q-item-section avatar>
-            <q-icon name="public" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Facebook</q-item-label>
-            <q-item-label caption>@QuasarFramework</q-item-label>
+            <q-item-label>Disconnect</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
