@@ -58,6 +58,14 @@
             <q-item-label>Add Event</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item clickable tag="a" to="/Admin" v-if="admin">
+          <q-item-section avatar>
+            <q-icon name="perm_identity" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Admin</q-item-label>
+          </q-item-section>
+        </q-item>
         <q-item clickable tag="a" to="/Login">
           <q-item-section avatar>
             <q-icon name="highlight_off" />
@@ -81,8 +89,10 @@ export default {
 
   data() {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      admin: true
     };
   }
 };
 </script>
+
