@@ -1,35 +1,7 @@
 <template>
   <q-page padding>
     <div class="q-pa-md flex flex-center column">
-      <h3>Edit user profile</h3>
-      <div class="flex">
-        <p style="padding-right:5px">Name:</p>
-        <div class="cursor-pointer">
-          {{user.name}}
-          <q-popup-edit v-model="user.name">
-            <q-input v-model="user.name" dense autofocus counter />
-          </q-popup-edit>
-        </div>
-      </div>
-      <div class="flex">
-        <p style="padding-right:5px">Email:</p>
-        <div class="cursor-pointer">
-          {{user.email}}
-          <q-popup-edit v-model="user.email">
-            <q-input v-model="user.email" dense autofocus counter />
-          </q-popup-edit>
-        </div>
-      </div>
-      <div class="flex">
-        <p style="padding-right:5px">Phone:</p>
-        <div class="cursor-pointer">
-          {{user.phone}}
-          <q-popup-edit v-model="user.phone">
-            <q-input v-model="user.phone" dense autofocus counter />
-          </q-popup-edit>
-        </div>
-      </div>
-      <br />
+      <h3>Add New Event</h3>
       <p>Availability</p>
       <div class="row">
         <div class="col" style="max-width: 150px">
@@ -56,25 +28,42 @@
           </q-input>
         </div>
       </div>
-    </div>
-
-    <div class="q-pa-md flex flex-center column">
-      <p>Select skills:</p>
-      <div class="q-gutter-md row items-start">
-        <q-select
+      <div class="q-pa-md">
+        <q-input filled bottom-slots v-model="place" label="Location" style="max-width: 200px">
+          <template v-slot:prepend>
+            <q-icon name="place" />
+          </template>
+        </q-input>
+        <!-- <q-input filled outlined v-model="number" label="Number of volunteers" /> -->
+        <q-input
+          v-model.number="number"
+          label="Number of volunteers"
+          type="number"
           filled
-          v-model="multiple"
-          multiple
-          :options="options"
-          label="Multiple"
-          style="width: 250px"
+          style="max-width: 200px"
         />
+        <p></p>
+        <div class>
+          Select skills:
+          <!-- <div class="q-gutter-md row items-start"> -->
+          <q-select
+            filled
+            v-model="multiple"
+            multiple
+            :options="options"
+            label="Multiple"
+            style="width: 250px"
+          />
+          <!-- </div> -->
+        </div>
+        <div style="max-width: 300px">
+          <p></p>Description of event:
+          <q-input v-model="decription" filled type="textarea" />
+        </div>
       </div>
     </div>
   </q-page>
 </template>
-
-
 
 <script>
 export default {
@@ -83,6 +72,8 @@ export default {
     return {
       startDate: "2019/11/09",
       endDate: "2019/11/09",
+      place: "",
+      number: "",
       multiple: null,
       options: [
         "Cooking",
@@ -92,11 +83,7 @@ export default {
         "Swimming",
         "Driving"
       ],
-      user: {
-        name: "John Smith",
-        email: "email@example.com",
-        phone: "0777777777"
-      }
+      description: ""
     };
   }
 };
