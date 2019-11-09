@@ -11,9 +11,7 @@
           aria-label="Menu"
         />
 
-        <q-toolbar-title>Quasar App</q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-toolbar-title>V-Offer</q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -52,6 +50,22 @@
             <q-item-label>My Events</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item clickable tag="a" to="/AddEvent">
+          <q-item-section avatar>
+            <q-icon name="add" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Add Event</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable tag="a" to="/Admin" v-if="admin">
+          <q-item-section avatar>
+            <q-icon name="perm_identity" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Admin</q-item-label>
+          </q-item-section>
+        </q-item>
         <q-item clickable tag="a" to="/Login">
           <q-item-section avatar>
             <q-icon name="highlight_off" />
@@ -75,8 +89,10 @@ export default {
 
   data() {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      admin: true
     };
   }
 };
 </script>
+
