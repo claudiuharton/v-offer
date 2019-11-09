@@ -1,12 +1,11 @@
 <template>
-  <q-page class="flex column">
+  <q-page class="flex flex-center column">
     <div class="q-pa-md">
       <q-table
-        title="Main Page"
+        title="Events Attended"
         :data="data"
         :columns="columns"
         row-key="name"
-        selection="multiple"
         :selected.sync="selected"
         :filter="filter"
         grid
@@ -16,17 +15,6 @@
           <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
             <template v-slot:append>
               <q-icon name="search" />
-              <div style="margin-left:30px;">
-                <q-btn round color="white" text-color="black" icon="done_outline" style />
-              </div>
-              <!-- <q-btn
-                round
-                color="white"
-                text-color="black"
-                icon="add"
-                to="/AddEvent"
-                style="margin-left:10px;"
-              />-->
             </template>
           </q-input>
         </template>

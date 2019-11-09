@@ -29,7 +29,7 @@
 </template>
 <style>
 body {
-  background-image: linear-gradient(#eaebed, #4b95de);
+  /* background-image: linear-gradient(#eaebed, #4b95de); */
 }
 </style>
 <style scoped>
