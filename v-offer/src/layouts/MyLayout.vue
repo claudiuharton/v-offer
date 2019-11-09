@@ -52,7 +52,7 @@
             <q-item-label>My Events</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable tag="a" to="/Login">
+        <q-item clickable tag="a" @click="logout">
           <q-item-section avatar>
             <q-icon name="highlight_off" />
           </q-item-section>
@@ -77,6 +77,12 @@ export default {
     return {
       leftDrawerOpen: false
     };
+  },
+  methods: {
+    logout() {
+      this.$cookies.set("loggedIn", 0);
+      this.$router.push("/login");
+    }
   }
 };
 </script>

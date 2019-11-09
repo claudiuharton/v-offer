@@ -63,7 +63,7 @@
           </div>
         </div>
         <div class="q-pa-md">
-          <q-btn label="Submit" type="submit" color="primary" />
+          <q-btn label="Submit" type="submit" v-on:click="onSubmit" color="primary" />
         </div>
       </q-form>
     </div>
@@ -80,16 +80,43 @@ export default {
       place: "",
       number: "",
       multiple: null,
-      options: [
-        "Cooking",
-        "Public speaking",
-        "Web coding",
-        "Teaching",
-        "Swimming",
-        "Driving"
-      ],
+      options: ["generosity", "willingness", "kindness"],
       description: ""
     };
+  },
+  // periodStart: req.body.periodStart,
+  //       periodEnd: req.body.periodEnd,
+  //       name: req.body.name,
+  //       location: req.body.location,
+  //       numberVolunteers: req.body.numberVolunteers,
+  //       status: 0,
+  //       description: req.body.description,
+  //       skills: req.body.skills,
+  //       user_id: user.id
+  methods: {
+    onSubmit() {
+      this.$axios
+        .post({
+          periodStart: this.startDate,
+          periodEnd: this.endDate,
+          location: this.place,
+          description: this.description,
+          numberVolunteers: this.number,
+          skills: this.multiple.join(",")
+        })
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    beforeCreate() {
+      const loggedIn = this.$cookies.get("loggedIn");
+      if (!loggedIn) {
+        this.$router.push("/login");
+      }
+    }
   }
 };
 </script>

@@ -59,6 +59,12 @@
 
 <script>
 export default {
+  beforeCreate() {
+    const loggedIn = this.$cookies.get("loggedIn");
+    if (!loggedIn) {
+      this.$router.push("/login");
+    }
+  },
   data() {
     return {
       filter: "",
