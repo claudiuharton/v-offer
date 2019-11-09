@@ -7,21 +7,23 @@
           filled
           v-model="name"
           label="Your name *"
-          hint="Name and surname"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Please type something']"
+        />
+        <q-input
+          filled
+          v-model="name"
+          label="Your email *"
           lazy-rules
           :rules="[ val => val && val.length > 0 || 'Please type something']"
         />
 
         <q-input
           filled
-          type="number"
-          v-model="age"
-          label="Your age *"
+          v-model="password"
+          label="Your password *"
           lazy-rules
-          :rules="[
-          val => val !== null && val !== '' || 'Please type your age',
-          val => val > 0 && val < 100 || 'Please type a real age'
-        ]"
+          :rules="[ val => val && val.length > 0 || 'Please type something']"
         />
 
         <div>
