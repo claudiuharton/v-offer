@@ -29,7 +29,7 @@
 </template>
 <style>
 body {
-  background-image: url("../assets/img/background-login.jpg");
+  background-image: linear-gradient(#eaebed, #4b95de);
 }
 </style>
 <style scoped>
