@@ -1,9 +1,9 @@
-const db = require('./db')
-const runtime = require('./runtime')
+const db = require("./db");
+const runtime = require("./runtime");
 
 const config = {
-    db,
-    runtime
-}
+  db,
+  runtime
+};
 
-module.exports = config
+module.exports = config;
